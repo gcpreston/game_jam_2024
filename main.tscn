@@ -1,8 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://cprb7bvw86a6i"]
+[gd_scene load_steps=6 format=3 uid="uid://cprb7bvw86a6i"]
 
-[ext_resource type="PackedScene" uid="uid://xft05vr2nyiw" path="res://unit.tscn" id="1_hkktb"]
+[ext_resource type="Script" path="res://Main.gd" id="1_qjvci"]
+[ext_resource type="PackedScene" uid="uid://bvr3nhm1g883h" path="res://Fishing/Mob.tscn" id="2_qjv8n"]
+[ext_resource type="PackedScene" uid="uid://cobc0a5fyfjku" path="res://Fishing/Hook.tscn" id="3_sjqps"]
+
+[sub_resource type="Curve2D" id="Curve2D_34ofl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_c0y7g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
 [node name="Main" type="Node"]
+script = ExtResource("1_qjvci")
+mob_scene = ExtResource("2_qjv8n")
 
-[node name="Unit" parent="." instance=ExtResource("1_hkktb")]
-grid = null
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00784314, 0.423529, 0.788235, 1)
+
+[node name="Hook" parent="." instance=ExtResource("3_sjqps")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="MobTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(550, 300)
+
+[node name="MobPathR" type="Path2D" parent="."]
+curve = SubResource("Curve2D_34ofl")
+
+[node name="MobSpawnLocationR" type="PathFollow2D" parent="MobPathR"]
+position = Vector2(1152, 0)
+rotation = 1.5708
+
+[node name="MobPathL" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c0y7g")
+
+[node name="MobSpawnLocationL" type="PathFollow2D" parent="MobPathL"]
+position = Vector2(0, 648)
+rotation = -1.5708
+
+[connection signal="hit" from="Hook" to="." method="hooked"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvr3nhm1g883h"]
+
+[ext_resource type="Script" path="res://Fishing/Mob.gd" id="1_fy0y6"]
+[ext_resource type="Texture2D" uid="uid://c7ucnbj4um2y4" path="res://art/fish.webp" id="1_k43wq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceisx"]
+radius = 40.0
+height = 164.0
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 1.66533e-16
+script = ExtResource("1_fy0y6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_k43wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ceisx")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
