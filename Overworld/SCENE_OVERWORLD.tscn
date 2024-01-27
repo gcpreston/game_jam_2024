@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx7yxxh3s7deu"]
+
+[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Overworld/PLAYER_CHARACTER.tscn" id="1_5u5tw"]
+
+[node name="SceneOverworld" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+position = Vector2(-7.99997, -20)
+scale = Vector2(0.595238, 4.25)
+polygon = PackedVector2Array(0, 0, 672, 0, 658.56, 170.353, 13.44, 170.353)
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall"]
+scale = Vector2(0.571429, 4.6)
+color = Color(0, 0.788235, 0, 1)
+polygon = PackedVector2Array(0, 0, 672, 0, 672, 20.2759, 672, 146.087, 0, 146.087)
+
+[node name="player" parent="." instance=ExtResource("1_5u5tw")]
+position = Vector2(512, 96)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+ignore_rotation = false
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
