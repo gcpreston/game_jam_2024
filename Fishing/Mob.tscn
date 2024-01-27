@@ -1,11 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvr3nhm1g883h"]
+[gd_scene load_steps=8 format=3 uid="uid://bvr3nhm1g883h"]
 
 [ext_resource type="Script" path="res://Fishing/Mob.gd" id="1_fy0y6"]
-[ext_resource type="Texture2D" uid="uid://c7ucnbj4um2y4" path="res://art/fish.webp" id="1_k43wq"]
+[ext_resource type="Texture2D" uid="uid://davw6r1k00i5l" path="res://art/fish_green_1.png" id="2_2vsh2"]
+[ext_resource type="Texture2D" uid="uid://bikvwmp48ljtr" path="res://art/fish_green_2.png" id="3_g4ggo"]
+[ext_resource type="Texture2D" uid="uid://0epqodtaehcg" path="res://art/fish_orange_1.png" id="4_fw188"]
+[ext_resource type="Texture2D" uid="uid://b2uwbr5oqkpjj" path="res://art/fish_orange_2.png" id="5_cgl6v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wy1ul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2vsh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g4ggo")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fw188")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cgl6v")
+}],
+"loop": true,
+"name": &"orange",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceisx"]
-radius = 40.0
-height = 164.0
+radius = 73.0
+height = 274.0
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
@@ -13,9 +41,10 @@ gravity_scale = 1.66533e-16
 script = ExtResource("1_fy0y6")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_k43wq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wy1ul")
+animation = &"green"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

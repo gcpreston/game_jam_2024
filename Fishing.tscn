@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cprb7bvw86a6i"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_qjvci"]
-[ext_resource type="PackedScene" uid="uid://bvr3nhm1g883h" path="res://Fishing/Mob.tscn" id="2_qjv8n"]
-[ext_resource type="PackedScene" uid="uid://cobc0a5fyfjku" path="res://Fishing/Hook.tscn" id="3_sjqps"]
+[ext_resource type="Script" path="res://Fishing.gd" id="1_m66ae"]
+[ext_resource type="PackedScene" uid="uid://bvr3nhm1g883h" path="res://Fishing/Mob.tscn" id="2_kl86e"]
+[ext_resource type="PackedScene" uid="uid://cobc0a5fyfjku" path="res://Fishing/Hook.tscn" id="3_8hf71"]
 
 [sub_resource type="Curve2D" id="Curve2D_34ofl"]
 _data = {
@@ -16,9 +16,9 @@ _data = {
 }
 point_count = 2
 
-[node name="Main" type="Node"]
-script = ExtResource("1_qjvci")
-mob_scene = ExtResource("2_qjv8n")
+[node name="Fishing" type="Node"]
+script = ExtResource("1_m66ae")
+mob_scene = ExtResource("2_kl86e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -28,8 +28,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.00784314, 0.423529, 0.788235, 1)
 
-[node name="Hook" parent="." instance=ExtResource("3_sjqps")]
+[node name="Hook" parent="." instance=ExtResource("3_8hf71")]
 position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(3, 3)
 
 [node name="MobTimer" type="Timer" parent="."]
 autostart = true
