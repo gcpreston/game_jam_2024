@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cprb7bvw86a6i"]
+
+[ext_resource type="PackedScene" uid="uid://xft05vr2nyiw" path="res://unit.tscn" id="1_hkktb"]
+
+[node name="Main" type="Node"]
+
+[node name="Unit" parent="." instance=ExtResource("1_hkktb")]
+grid = null

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xft05vr2nyiw"]
+
+[ext_resource type="Script" path="res://Unit.gd" id="1_jd0i4"]
+[ext_resource type="Texture2D" uid="uid://br0dj5n8a5xcd" path="res://art/jester.png" id="2_4ehq6"]
+
+[node name="Unit" type="Path2D"]
+script = ExtResource("1_jd0i4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Sprite" type="Sprite2D" parent="PathFollow2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4ehq6")
