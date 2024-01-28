@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwtip8riex6xa"]
+
+[ext_resource type="Script" path="res://Dialogue/TEXT_BOX.gd" id="1_6t8am"]
+[ext_resource type="FontFile" uid="uid://bmm8q6os6u0ax" path="res://addons/ez_dialogue/main_screen/ProggyVector Regular.ttf" id="1_r8i83"]
+
+[node name="TEXT_BOX" type="MarginContainer"]
+script = ExtResource("1_6t8am")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_r8i83")
+vertical_alignment = 1
+
+[node name="LETTER_DISPLAY_TIMER" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LETTER_DISPLAY_TIMER" to="." method="_on_letter_display_timer_timeout"]
