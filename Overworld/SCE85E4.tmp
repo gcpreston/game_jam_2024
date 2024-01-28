@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx7yxxh3s7deu"]
+[gd_scene load_steps=3 format=3 uid="uid://b0arlefiiwrw"]
 
-[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Overworld/PLAYER_CHARACTER.tscn" id="1_5u5tw"]
+[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Overworld/OBJ_PLAYER_CHARACTER.tscn" id="1_5u5tw"]
+[ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://PREFAB_GATE.tscn" id="2_rsqf7"]
 
 [node name="SceneOverworld" type="Node2D"]
 
@@ -19,8 +20,11 @@ polygon = PackedVector2Array(0, 0, 672, 0, 672, 20.2759, 672, 146.087, 0, 146.08
 [node name="player" parent="." instance=ExtResource("1_5u5tw")]
 position = Vector2(512, 96)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D2" type="Camera2D" parent="player"]
 ignore_rotation = false
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
+
+[node name="Gate to Marketplace" parent="." instance=ExtResource("2_rsqf7")]
+dest_scene = "res://Overworld/SCENE_MARKETPLACE.tscn"
