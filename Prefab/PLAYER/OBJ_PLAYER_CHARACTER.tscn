@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b6m8eau00nrmo" path="res://Prefab/PLAYER/spritesheet.png" id="2_u4j8c"]
 [ext_resource type="FontFile" uid="uid://bmm8q6os6u0ax" path="res://addons/ez_dialogue/main_screen/ProggyVector Regular.ttf" id="4_88qd0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ccro"]
-size = Vector2(500, 500)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqecg"]
 
-[sub_resource type="Animation" id="Animation_bhhve"]
-resource_name = "Idle_right"
+[sub_resource type="Animation" id="Animation_4ktqp"]
+resource_name = "Idle_back"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -18,27 +17,10 @@ tracks/0/path = NodePath("GFX:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_0amdb"]
-resource_name = "Idle_left"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
+"values": [9, 10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_7n81u"]
@@ -58,25 +40,8 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_4ktqp"]
-resource_name = "Idle_back"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [9, 10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_tgumv"]
-resource_name = "Walk_front"
+[sub_resource type="Animation" id="Animation_0amdb"]
+resource_name = "Idle_left"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -89,11 +54,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [12, 13]
+"values": [6, 7]
 }
 
-[sub_resource type="Animation" id="Animation_kta3k"]
-resource_name = "Walk_back"
+[sub_resource type="Animation" id="Animation_bhhve"]
+resource_name = "Idle_right"
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -103,15 +68,32 @@ tracks/0/path = NodePath("GFX:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_kta3k"]
+resource_name = "Walk_back"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GFX:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [14, 15]
 }
 
-[sub_resource type="Animation" id="Animation_k8c6r"]
-resource_name = "Walk_right"
-length = 0.8
+[sub_resource type="Animation" id="Animation_tgumv"]
+resource_name = "Walk_front"
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -120,15 +102,15 @@ tracks/0/path = NodePath("GFX:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [16, 17, 18, 17]
+"values": [12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_qxqtr"]
 resource_name = "Walk_left"
-length = 0.8
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -137,10 +119,27 @@ tracks/0/path = NodePath("GFX:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [19, 20, 21, 20]
+}
+
+[sub_resource type="Animation" id="Animation_k8c6r"]
+resource_name = "Walk_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GFX:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 17]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4shcb"]
@@ -220,14 +219,14 @@ motion_mode = 1
 script = ExtResource("1_2kqen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.90735e-05)
+position = Vector2(-6.77626e-21, 0)
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_1ccro")
+shape = SubResource("CircleShape2D_qqecg")
 
 [node name="GFX" type="Sprite2D" parent="."]
 texture = ExtResource("2_u4j8c")
 hframes = 22
-frame = 13
+frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

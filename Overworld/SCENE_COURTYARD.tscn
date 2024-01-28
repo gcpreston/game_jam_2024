@@ -20,6 +20,11 @@ scale = Vector2(0.326531, 1.5261)
 color = Color(0.984314, 0, 0.258824, 1)
 polygon = PackedVector2Array(0, 20.9685, 685.999, 20.9685, 685.999, 20.9685, 685.999, 146.779, -0.000244141, 146.779)
 
+[node name="NPC 1" type="CharacterBody2D" parent="."]
+position = Vector2(736, 288)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC 1"]
+
 [node name="player" parent="." instance=ExtResource("1_5u5tw")]
 position = Vector2(736, 288)
 scale = Vector2(1, 1)
