@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://igs88anihdxb"]
+
+[ext_resource type="PackedScene" uid="uid://ci6kaglw7ylop" path="res://Court_and_Mote.tscn" id="2_4abap"]
+[ext_resource type="PackedScene" uid="uid://c87x4vth8ms7j" path="res://throne.tscn" id="2_yfnks"]
+
+[node name="Full Map" type="Node2D"]
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="Courtyard" parent="." instance=ExtResource("2_4abap")]
+
+[node name="Throne" parent="." instance=ExtResource("2_yfnks")]

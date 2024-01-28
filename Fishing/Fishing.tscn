@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cprb7bvw86a6i"]
+[gd_scene load_steps=10 format=3 uid="uid://cprb7bvw86a6i"]
 
-[ext_resource type="Script" path="res://Fishing.gd" id="1_m66ae"]
+[ext_resource type="Script" path="res://Fishing/Fishing.gd" id="1_m66ae"]
 [ext_resource type="PackedScene" uid="uid://bvr3nhm1g883h" path="res://Fishing/Mob.tscn" id="2_kl86e"]
 [ext_resource type="PackedScene" uid="uid://cobc0a5fyfjku" path="res://Fishing/Hook.tscn" id="3_8hf71"]
 [ext_resource type="PackedScene" uid="uid://yctgbm31sj6q" path="res://Fishing/Cushion.tscn" id="3_ch7s3"]
-[ext_resource type="Texture2D" uid="uid://dildofse7ddij" path="res://art/fishing_bg.png" id="3_cnorg"]
+[ext_resource type="Texture2D" uid="uid://dildofse7ddij" path="res://Art/fishing_bg.png" id="3_cnorg"]
 [ext_resource type="PackedScene" uid="uid://dkmvmpep0ln7g" path="res://HUD.tscn" id="6_18lr7"]
+[ext_resource type="AudioStream" uid="uid://djks77xjwp0ko" path="res://music/clockworkgroove.mp3" id="7_ex6xg"]
 
 [sub_resource type="Curve2D" id="Curve2D_34ofl"]
 _data = {
@@ -57,6 +58,10 @@ curve = SubResource("Curve2D_c0y7g")
 [node name="MobSpawnLocationL" type="PathFollow2D" parent="MobPathL"]
 position = Vector2(0, 648)
 rotation = -1.5708
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ex6xg")
+autoplay = true
 
 [connection signal="body_entered" from="Hook" to="." method="hook_body_entered"]
 [connection signal="body_exited" from="Hook" to="." method="hook_body_exited"]

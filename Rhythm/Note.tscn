@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://86aldfo6ah4p"]
+
+[ext_resource type="Texture2D" uid="uid://cw8ohdu3a0cku" path="res://art/note_placeholder.png" id="1_xbdch"]
+
+[node name="Note" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xbdch")

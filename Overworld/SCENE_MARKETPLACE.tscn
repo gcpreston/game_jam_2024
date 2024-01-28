@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqfj8f046vs0s"]
+[gd_scene load_steps=3 format=3 uid="uid://b0f5ov0dtdbsv"]
 
 [ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.tscn" id="2_3ga56"]
 [ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://Prefab/OBJ_DOOR.tscn" id="3_dga0a"]
