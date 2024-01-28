@@ -2,7 +2,14 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
+@export var dialogue_json: JSON
+@export var state = {}
 
+func _on_ez_dialogue_dialogue_generated(response: DialogueResponse):
+	$DIALOGUE_BOX.add_text(response.text)
+
+func _ready():
+	($EzDialogue as EzDialogue).start_dialogue(dialogue_json, state)
 
 func _physics_process(_delta):
 

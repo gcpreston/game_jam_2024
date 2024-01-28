@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Trash Boy Studio-s Funny Robot Game"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ez_dialogue/plugin.cfg")
+
 [input]
 
 ui_accept={
