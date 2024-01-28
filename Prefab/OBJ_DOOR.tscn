@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cndjht180ltvc"]
+
+[ext_resource type="Script" path="res://Overworld/SCRIPT_DOOR.gd" id="1_kpewb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_536nw"]
+size = Vector2(74, 128)
+
+[node name="Gate" type="Area2D"]
+script = ExtResource("1_kpewb")
+dest_scene = "<null>"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 31.9996)
+shape = SubResource("RectangleShape2D_536nw")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-1120, -149.333)
+scale = Vector2(1, 0.666667)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1120, 320, 1152, 320, 1152, 224, 1120, 224, 1120, 267.487)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

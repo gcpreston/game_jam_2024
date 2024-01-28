@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqfj8f046vs0s"]
+
+[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.tscn" id="2_3ga56"]
+[ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://Prefab/OBJ_DOOR.tscn" id="3_dga0a"]
+
+[node name="SceneMarketplace" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_3ga56")]
+position = Vector2(64.0001, 320)
+
+[node name="Gate to Courtyard" parent="." instance=ExtResource("3_dga0a")]
+position = Vector2(32, 352)
+rotation = 3.14159
+dest_scene = "res://Overworld/SCENE_COURTYARD.tscn"

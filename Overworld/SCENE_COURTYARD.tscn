@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0arlefiiwrw"]
+
+[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.tscn" id="1_5u5tw"]
+[ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://Prefab/OBJ_DOOR.tscn" id="2_rsqf7"]
+
+[node name="SceneOverworld" type="Node2D"]
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+position = Vector2(32, 192)
+scale = Vector2(0.595238, 4.25)
+polygon = PackedVector2Array(967.68, 52.7059, 1344, 52.7059, 1344, 97.8824, 967.68, 97.8824)
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall"]
+position = Vector2(608, 384)
+scale = Vector2(0.326531, 1.5261)
+color = Color(0, 0.788235, 0, 1)
+polygon = PackedVector2Array(0, 20.9685, 685.999, 20.9685, 685.999, 20.9685, 685.999, 146.779, -0.000244141, 146.779)
+
+[node name="player" parent="." instance=ExtResource("1_5u5tw")]
+position = Vector2(736, 288)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+ignore_rotation = false
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+
+[node name="Gate to Marketplace" parent="." instance=ExtResource("2_rsqf7")]
+position = Vector2(1120, 320)
+dest_scene = "res://Overworld/SCENE_MARKETPLACE.tscn"
+
+[node name="Gate to Garden" parent="." instance=ExtResource("2_rsqf7")]
+position = Vector2(32, 384)
+rotation = 3.14159
+dest_scene = "res://Overworld/SCENE_MAGIC_GARDEN.tscn"
+
+[node name="Gate to Castle" parent="." instance=ExtResource("2_rsqf7")]
+position = Vector2(544, 32)
+rotation = 4.71239
+dest_scene = "res://Overworld/SCENE_THRONE_ROOM.tscn"

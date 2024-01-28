@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmhc2wgmc88aq"]
+
+[ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://Prefab/OBJ_DOOR.tscn" id="1_4b7og"]
+[ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.tscn" id="2_lc34x"]
+
+[node name="SceneMagicGarden" type="Node2D"]
+
+[node name="Gate to Courtyard" parent="." instance=ExtResource("1_4b7og")]
+position = Vector2(1120, 320)
+dest_scene = "res://Overworld/SCENE_COURTYARD.tscn"
+
+[node name="player" parent="." instance=ExtResource("2_lc34x")]
+position = Vector2(1024, 352)

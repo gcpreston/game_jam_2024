@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://mhxfpwwg6gfh"]
 
-[ext_resource type="Script" path="res://Overworld/PLAYER_CHARACTER.gd" id="1_br5k7"]
-[ext_resource type="Texture2D" uid="uid://br0dj5n8a5xcd" path="res://art/jester.png" id="1_i134v"]
+[ext_resource type="Script" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.gd" id="1_2kqen"]
+[ext_resource type="Texture2D" uid="uid://br0dj5n8a5xcd" path="res://art/jester.png" id="2_5kgce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ccro"]
 size = Vector2(500, 500)
@@ -9,13 +9,18 @@ size = Vector2(500, 500)
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 motion_mode = 1
-script = ExtResource("1_br5k7")
+script = ExtResource("1_2kqen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.90735e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1ccro")
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_i134v")
+texture = ExtResource("2_5kgce")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
