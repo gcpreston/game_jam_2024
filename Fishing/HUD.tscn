@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkmvmpep0ln7g"]
+
+[ext_resource type="Script" path="res://Fishing/HUD.gd" id="1_m411g"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_m411g")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -87.5
+offset_right = 152.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
