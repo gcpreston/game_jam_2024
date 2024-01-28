@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm476dkyqfbou"]
+
+[ext_resource type="Texture2D" uid="uid://5waogcw60lf7" path="res://art/circle.webp" id="1_moa3u"]
+
+[node name="Goal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_moa3u")

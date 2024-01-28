@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0arlefiiwrw"]
+[gd_scene load_steps=5 format=3 uid="uid://c1wgo51lltbyp"]
 
 [ext_resource type="PackedScene" uid="uid://mhxfpwwg6gfh" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.tscn" id="1_5u5tw"]
 [ext_resource type="PackedScene" uid="uid://cndjht180ltvc" path="res://Prefab/OBJ_DOOR.tscn" id="2_rsqf7"]
-[ext_resource type="PackedScene" uid="uid://bvjvytf4g61bw" path="res://Prefab/OBJ_DIALOG.tscn" id="6_a77gn"]
+[ext_resource type="PackedScene" path="res://Prefab/OBJ_DIALOG.tscn" id="6_a77gn"]
 [ext_resource type="PackedScene" uid="uid://dwtip8riex6xa" path="res://Dialogue/TEXT_BOX.tscn" id="7_bs3pe"]
 
 [node name="SceneOverworld" type="Node2D"]

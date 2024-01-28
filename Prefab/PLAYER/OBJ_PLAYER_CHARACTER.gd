@@ -5,7 +5,7 @@ var prev_direction = null
 
 func _ready():
 	$AnimationPlayer.play("Idle_front");
-		
+
 func _physics_process(_delta):
 	#if Input.is_action_just_pressed("ui_down"):
 		#$AnimationPlayer.play("Idle_front");
@@ -30,7 +30,7 @@ func _physics_process(_delta):
 		velocity.y = yDirection * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
+
 	if velocity.x < 0:
 		$AnimationPlayer.play("Walk_left")
 		prev_direction = "left"
@@ -52,6 +52,6 @@ func _physics_process(_delta):
 			$AnimationPlayer.play("Idle_back")
 		elif prev_direction == "down":
 			$AnimationPlayer.play("Idle_front")
-	
-	
+
+
 	move_and_slide()
