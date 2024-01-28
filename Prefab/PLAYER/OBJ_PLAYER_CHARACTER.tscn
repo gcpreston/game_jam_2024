@@ -1,10 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://mhxfpwwg6gfh"]
+[gd_scene load_steps=6 format=3 uid="uid://mhxfpwwg6gfh"]
 
 [ext_resource type="Script" path="res://Prefab/PLAYER/OBJ_PLAYER_CHARACTER.gd" id="1_2kqen"]
 [ext_resource type="Texture2D" uid="uid://br0dj5n8a5xcd" path="res://art/jester.png" id="2_5kgce"]
+[ext_resource type="FontFile" uid="uid://bmm8q6os6u0ax" path="res://addons/ez_dialogue/main_screen/ProggyVector Regular.ttf" id="4_88qd0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ccro"]
 size = Vector2(500, 500)
+
+[sub_resource type="GDScript" id="GDScript_g6mbr"]
+script/source = "extends MarginContainer
+
+
+@onready var label = $MarginContainer/Label
+@onready var timer = $LETTER_DISPLAY_TIMER
+
+
+const MAX_WIDTH = 256
+
+var text = \"\"
+var letter_index = 0
+
+var letter_time = 0.03
+var space_time = 0.06
+var punctuation_time = 0.02
+
+signal finished_displaying()
+
+func display_text(text_to_display: String):
+	text = text_to_display
+	label.text = text_to_display
+	
+	await resized
+	custom_minimum_size.x = min(size.x, MAX_WIDTH)
+	
+	if size.x > MAX_WIDTH:
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		await resized
+		await resized
+		custom_minimum_size.y = size.y
+		
+		global_position.x -= size.x/2
+		global_position.y -= size.y + 24
+		
+		label.text = \"\"
+		_display_letter()
+
+func _display_letter():
+	label.text += text[letter_index]
+	
+	letter_index += 1
+	if letter_index >= text.length():
+		finished_displaying.emit()
+		return
+	
+	match text[letter_index]:
+		\"!\", \".\", \"?\", \",\":
+			timer.start(punctuation_time)
+		\" \":
+				timer.start(space_time)
+		_:
+			timer.start(letter_time)
+
+
+func _on_letter_display_timer_timeout():
+	_display_letter()
+"
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -24,3 +84,27 @@ ignore_rotation = false
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
+
+[node name="TEXT_BOX" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_g6mbr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TEXT_BOX"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TEXT_BOX"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="TEXT_BOX/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_88qd0")
+vertical_alignment = 1
+
+[node name="LETTER_DISPLAY_TIMER" type="Timer" parent="TEXT_BOX"]
+one_shot = true

@@ -15,9 +15,17 @@ run/main_scene="res://Overworld/SCENE_COURTYARD.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://Dialogue/DIALOGUE_MANAGER.gd"
+
 [dotnet]
 
 project/assembly_name="Trash Boy Studio-s Funny Robot Game"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ez_dialogue/plugin.cfg")
 
 [input]
 

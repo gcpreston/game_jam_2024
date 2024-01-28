@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvjvytf4g61bw"]
+
+[ext_resource type="Script" path="res://Prefab/SCRIPT_DIALOG.gd" id="1_c48v1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kp26s"]
+radius = 11.8
+
+[node name="ObjDialog" type="Area2D"]
+script = ExtResource("1_c48v1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 31.9996)
+scale = Vector2(6.76417, 5)
+shape = SubResource("CircleShape2D_kp26s")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-1120, -149.333)
+scale = Vector2(1, 0.666667)
+color = Color(0, 0.929412, 0, 1)
+polygon = PackedVector2Array(1120, 320, 1152, 320, 1152, 224, 1120, 224, 1120, 267.487)
