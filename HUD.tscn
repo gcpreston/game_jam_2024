@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkmvmpep0ln7g"]
 
-[ext_resource type="Script" path="res://Fishing/HUD.gd" id="1_m411g"]
+[ext_resource type="Script" path="res://HUD.gd" id="1_m411g"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_m411g")

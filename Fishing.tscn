@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cobc0a5fyfjku" path="res://Fishing/Hook.tscn" id="3_8hf71"]
 [ext_resource type="PackedScene" uid="uid://yctgbm31sj6q" path="res://Fishing/Cushion.tscn" id="3_ch7s3"]
 [ext_resource type="Texture2D" uid="uid://dildofse7ddij" path="res://art/fishing_bg.png" id="3_cnorg"]
-[ext_resource type="PackedScene" uid="uid://dkmvmpep0ln7g" path="res://Fishing/HUD.tscn" id="6_18lr7"]
+[ext_resource type="PackedScene" uid="uid://dkmvmpep0ln7g" path="res://HUD.tscn" id="6_18lr7"]
 
 [sub_resource type="Curve2D" id="Curve2D_34ofl"]
 _data = {

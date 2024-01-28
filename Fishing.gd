@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("action"):
+	if Input.is_action_just_pressed("action"):
 		game_end(potential_hook && potential_hook.name.match("**Cushion**"))
 
 
