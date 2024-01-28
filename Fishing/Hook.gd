@@ -1,10 +1,8 @@
 extends Area2D
 
-signal hit
-
 @export var speed = 400
 var screen_size
-
+var potential_hook: RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,11 +29,3 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-
-
-func _on_hit():
-	print("Hit something!")
-
-
-func _on_body_entered(body):
-	hit.emit()
